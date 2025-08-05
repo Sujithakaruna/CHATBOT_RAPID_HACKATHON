@@ -30,21 +30,36 @@ Google Colab – The development and runtime environment for coding, testing, an
 
 ---
 
-## 💡 How It Works
+## ⚙️ How It Works
 
-1. **User enters a company name** (e.g., Tesla).
-2. The chatbot:
-   - Searches for the latest news using DuckDuckGo.
-   - Extracts article content using `newspaper3k`.
-   - Summarizes it using HuggingFace’s `distilbart-cnn-12-6` model.
-   - Formats the summary in your chosen style.
-3. Returns the clean summary + links to full articles.
+1. **User Input**: You type a company name (e.g., "Tesla").
+2. **News Search**: The chatbot uses DuckDuckGo to find the latest news links.
+3. **Content Extraction**: Each news link is parsed with `newspaper3k` to extract the full article text.
+4. **Summarization**: The article content is summarized using the HuggingFace summarization model (`sshleifer/distilbart-cnn-12-6`).
+5. **Response Styling**: Based on your selected style (Formal, Casual, Bullet Points), the summary is formatted and returned to you.
+6. **Chat UI**: All interaction happens via a beautiful and simple **Gradio** interface.
 
 ---
 
-## 🚀 Getting Started
+## 💬 Example Styles
 
-### 🔧 Install Dependencies (in Colab or locally)
+- **Formal**: "According to recent news, Tesla announced..."
+- **Casual**: "Hey! Guess what? Tesla just dropped some hot updates..."
+---
 
-```bash
+## 🤖 AI Model Used
+
+- Model: `sshleifer/distilbart-cnn-12-6`  
+- Library: [🤗 HuggingFace Transformers](https://huggingface.co/transformers/)
+- Task: Summarization (`pipeline("summarization")`)
+
+---
+
+## 🚀 How to Run on Google Colab
+
+1. Open [Google Colab](https://colab.research.google.com/)
+2. Paste your full code.
+3. Install the required packages:
+
+```python
 !pip install gradio duckduckgo-search newspaper3k transformers
