@@ -16,15 +16,17 @@ A smart AI chatbot that fetches and summarizes the latest news about any company
 ---
 
 ## 🛠️ Tech Stack
+Gradio – Used to build the interactive user interface for the chatbot.
 
-   Tool                                        | Purpose |
-                                    |---------------------------------|
- `Gradio`                          | For building the user interface |
- `DuckDuckGo Search`               | To get the latest news links |
- `Newspaper3k`                     | To extract full article content from URLs |
- `Transformers` (HuggingFace)      | For summarizing news articles |
- `BeautifulSoup` (used optionally) | For HTML parsing if needed |
- `Google Colab`                    | For development and running the project online |
+DuckDuckGo Search – To fetch the latest news links related to the company or topic.
+
+Newspaper3k – To extract the full news content (title, text, publication date) from each URL.
+
+Transformers (HuggingFace) – Used for summarizing the extracted news articles using pre-trained AI models like t5-small or bart-large-cnn.
+
+BeautifulSoup (optional) – Used for parsing raw HTML if newspaper3k fails or needs assistance.
+
+Google Colab – The development and runtime environment for coding, testing, and deploying the project online.
 
 ---
 
